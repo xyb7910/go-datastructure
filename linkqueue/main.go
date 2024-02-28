@@ -13,6 +13,11 @@ type LinkQueue struct {
 	lock sync.Mutex
 }
 
+// Size 获取队列长度
+func (queue *LinkQueue) Size() int {
+	return queue.size
+}
+
 // Add 新元素入队
 func (queue *LinkQueue) Add(v string) {
 	queue.lock.Lock()
